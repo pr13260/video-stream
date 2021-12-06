@@ -1,18 +1,16 @@
 import asyncio
-
-from driver.veez import bot, call_py
 from pytgcalls import idle
-
+from driver.veez import call_py, bot
 
 async def mulai_bot():
-    print("[INFO]: STARTING BOT CLIENT")
+    print("[VEEZ]: STARTING BOT CLIENT")
     await bot.start()
-    print("[INFO]: STARTING PYTGCALLS CLIENT")
+    print("[VEEZ]: STARTING PYTGCALLS CLIENT")
     await call_py.start()
     await idle()
-    print("[INFO]: STOPPING BOT")
+    await pidle()
+    print("[VEEZ]: STOPPING BOT & USERBOT")
     await bot.stop()
-
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(mulai_bot())
